@@ -13,7 +13,7 @@ public class CollectDel implements Runnable {
     public void collectDel () {
         while (true) {
             if (list.size() > 0) {
-                del();
+                del(list);
                 System.out.println(list.toString());
                 try {
                     Thread.sleep(1000);
@@ -30,7 +30,7 @@ public class CollectDel implements Runnable {
         }
     }
 
-    synchronized void del() {
+    synchronized void del(List<Integer> list) {
         int i = list.size() - 1;
         int el = list.get(i);
         list.remove(i);

@@ -13,7 +13,7 @@ public class CollectAdd implements Runnable {
     public void collectAdd() {
         while (true) {
             if (list.size() < 10) {
-                add();
+                add(list);
                 System.out.println(list.toString());
                 try {
                     Thread.sleep(1000);
@@ -22,7 +22,7 @@ public class CollectAdd implements Runnable {
                 }
             } else {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -30,7 +30,7 @@ public class CollectAdd implements Runnable {
         }
     }
 
-    synchronized void add (){
+    synchronized void add (List<Integer> list){
         int i = (int) (Math.random()*100);
         list.add(i);
         System.out.println("element has been added: " + i);
