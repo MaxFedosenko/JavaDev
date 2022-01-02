@@ -5,6 +5,7 @@ sex bool not null,
 birthday date);
 drop table persons;
 
+
 create table if not exists hobbie_type(
 id bigserial primary key,
 name varchar(20));

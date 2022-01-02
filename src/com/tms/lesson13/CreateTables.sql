@@ -21,6 +21,7 @@ insert into hobbies (name, type) values
 ('Fishing', 2);
 select * from hobbies;
 
+
 insert into person_hobbie (person_id, hobbie_id) values
 (1, 1),
 (1, 4),

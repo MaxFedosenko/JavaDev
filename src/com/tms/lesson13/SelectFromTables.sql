@@ -4,6 +4,7 @@ select count(*), sex from persons group by sex;
 
 select name, hobbie_id from persons join person_hobbie on persons.id = person_hobbie.hobbie_id;
 
+
 select persons.name from persons join person_hobbie on persons.id = person_hobbie.person_id
 group by persons.name having count(hobbie_id) > 1;
 
