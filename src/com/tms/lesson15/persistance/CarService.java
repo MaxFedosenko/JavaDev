@@ -17,7 +17,7 @@ public class CarService implements Entity<Car> {
     private static final String TYPE_COL = "type";
     private static final String YEAR_COL = "year";
 
-    public CarService(Connection connect) {
+    public CarService(Connection connect) throws NullPointerException{
         this.connect = connect;
     }
 
@@ -61,7 +61,7 @@ public class CarService implements Entity<Car> {
         try {
             int id = car.getId();
             if (id == 0) {
-                throw new SQLException("no car in database");
+                throw new SQLException("no car in database, car must contain id");
             }
             PreparedStatement statement = connect.prepareStatement("delete from car where id = ?");
             statement.setInt(1, id);
